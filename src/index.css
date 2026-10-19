@@ -1,0 +1,426 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .pixelated {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* -------------------------------------------------------------
+ * Pistachio Green Ambient Glow & Cyber Grid Background
+ * ------------------------------------------------------------- */
+.bg-pistachio-grid {
+  background-color: #070a12;
+  background-image:
+    /* Ambient Pistachio Radial Glows */
+    radial-gradient(circle at 50% 12%, rgba(190, 242, 100, 0.22) 0%, transparent 60%),
+    radial-gradient(circle at 10% 75%, rgba(190, 242, 100, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 90% 75%, rgba(190, 242, 100, 0.12) 0%, transparent 45%),
+    /* Pistachio Grid Lines */
+    linear-gradient(to right, rgba(190, 242, 100, 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(190, 242, 100, 0.15) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 28px 28px, 28px 28px;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.bg-pistachio-grid::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(3, 5, 10, 0.75) 100%);
+  z-index: 1;
+}
+
+/* -------------------------------------------------------------
+ * MultiCraft Silver-Slate Studio UI Theme (matching Screenshot 240)
+ * ------------------------------------------------------------- */
+
+/* Outer Window Frame */
+.max-w-7xl > div.bg-\[\#0c0e17\]\/95 {
+  background: linear-gradient(180deg, #f0f4f9 0%, #dbe3ee 100%) !important;
+  border: 2px solid #b8c7d8 !important;
+  box-shadow: 
+    0 25px 60px -15px rgba(0, 0, 0, 0.75),
+    0 0 50px rgba(190, 242, 100, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+  color: #1e293b !important;
+}
+
+/* Window Header */
+.max-w-7xl header {
+  background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%) !important;
+  border-bottom: 1.5px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+.max-w-7xl header h1 {
+  color: #0f172a !important;
+}
+
+.max-w-7xl header .bg-\[\#BEF264\]\/10 {
+  background: #d8e2ee !important;
+  border-color: #b0c0d2 !important;
+}
+
+.max-w-7xl header span.bg-\[\#BEF264\]\/15 {
+  background: #22c55e !important;
+  color: #ffffff !important;
+  border-color: #16a34a !important;
+}
+
+/* Quick Save Button (Green) */
+.max-w-7xl header button:has(svg.lucide-save) {
+  background: linear-gradient(180deg, #34d399 0%, #22c55e 50%, #16a34a 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid #15803d !important;
+  box-shadow: 0 2px 6px rgba(34, 197, 94, 0.35) !important;
+}
+
+/* Export 128x64 PNG Button */
+.max-w-7xl header button:has(svg.lucide-download) {
+  background: linear-gradient(180deg, #f1f5f9 0%, #cbd5e1 100%) !important;
+  color: #0f172a !important;
+  border: 1px solid #94a3b8 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Header Reset & More Buttons */
+.max-w-7xl header button.bg-\[\#161a2b\],
+.max-w-7xl header button.bg-\[\#BEF264\] {
+  background: #e2e8f0 !important;
+  color: #334155 !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+.max-w-7xl header button.bg-\[\#161a2b\]:hover {
+  background: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+/* More Dropdown Menu */
+.max-w-7xl header .absolute.bg-\[\#161a2c\] {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+  color: #1e293b !important;
+}
+
+.max-w-7xl header .absolute.bg-\[\#161a2c\] button:hover {
+  background: #f1f5f9 !important;
+}
+
+/* -------------------------------------------------------------
+ * Left Column: Category Navigation Tabs
+ * ------------------------------------------------------------- */
+aside.bg-\[\#0d0f1b\]\/80 {
+  background: #dbe3ed !important;
+  border-right: 1.5px solid #cbd5e1 !important;
+}
+
+/* Inactive Category Tab Pill */
+aside button.bg-\[\#141724\]\/80 {
+  background: linear-gradient(180deg, #c5d2e2 0%, #b3c2d4 100%) !important;
+  border: 1px solid #8e9fb4 !important;
+  border-left: 4px solid transparent !important;
+  color: #1e293b !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+}
+
+aside button.bg-\[\#141724\]\/80:hover {
+  background: linear-gradient(180deg, #d3dfed 0%, #c1cfe1 100%) !important;
+  color: #0f172a !important;
+  border-color: #7b8ea5 !important;
+}
+
+aside button .bg-black\/30 {
+  background: rgba(255, 255, 255, 0.4) !important;
+  border-color: rgba(142, 159, 180, 0.5) !important;
+}
+
+/* Active Category Tab Pill (Vibrant Green matching Screenshot 240) */
+aside button.bg-\[\#BEF264\]\/15 {
+  background: linear-gradient(180deg, #38d39f 0%, #22c55e 50%, #16a34a 100%) !important;
+  border: 1px solid #15803d !important;
+  border-left: 4px solid #14532d !important;
+  color: #ffffff !important;
+  box-shadow: 0 3px 12px rgba(34, 197, 94, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.45) !important;
+}
+
+aside button.bg-\[\#BEF264\]\/15 .bg-\[\#BEF264\]\/20 {
+  background: rgba(255, 255, 255, 0.25) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+aside button.bg-\[\#BEF264\]\/15 span {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+aside button span.bg-\[\#BEF264\]\/20 {
+  background: rgba(0, 0, 0, 0.2) !important;
+  color: #ffffff !important;
+}
+
+/* -------------------------------------------------------------
+ * Center Column: Item Grid & Content Panels
+ * ------------------------------------------------------------- */
+main.bg-\[\#0f1220\]\/90 {
+  background: #eaeff6 !important;
+  border-right: 1.5px solid #cbd5e1 !important;
+}
+
+/* Item Grid Container */
+main .bg-\[\#0d101d\] {
+  background: #eef3f9 !important;
+}
+
+/* Search Box & Controls Header */
+main .border-b.border-white\/10 {
+  border-color: #cbd5e1 !important;
+}
+
+main input[type="text"] {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1 !important;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+main input[type="text"]::placeholder {
+  color: #64748b !important;
+}
+
+/* Filter Chips */
+main button:has(span.text-xs) {
+  color: #334155 !important;
+}
+
+/* Filter buttons */
+main .flex.items-center.gap-1.5 button {
+  background: #dbe4ef !important;
+  border: 1px solid #b4c2d4 !important;
+  color: #334155 !important;
+}
+
+main .flex.items-center.gap-1.5 button.bg-\[\#BEF264\]\/15 {
+  background: #22c55e !important;
+  border-color: #16a34a !important;
+  color: #ffffff !important;
+}
+
+/* Item Cards in Grid */
+.item-card-box,
+main .grid button.group {
+  background: #d3deec !important;
+  border: 1px solid #a8bbd1 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+  border-radius: 10px !important;
+}
+
+main .grid button.group:hover {
+  background: #ffffff !important;
+  border-color: #22c55e !important;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.25) !important;
+}
+
+main .grid button.group.border-\[\#BEF264\] {
+  background: #ffffff !important;
+  border-color: #22c55e !important;
+  box-shadow: 0 0 0 2px #22c55e, 0 4px 12px rgba(34, 197, 94, 0.3) !important;
+}
+
+/* Pagination Bar */
+main .border-t.border-white\/10 {
+  border-color: #cbd5e1 !important;
+  background: #dbe3ed !important;
+  color: #1e293b !important;
+}
+
+main .border-t.border-white\/10 button {
+  background: #cbd5e1 !important;
+  border: 1px solid #94a3b8 !important;
+  color: #1e293b !important;
+}
+
+main .border-t.border-white\/10 span {
+  color: #1e293b !important;
+}
+
+/* -------------------------------------------------------------
+ * Bottom Palette & RGB Sliders Studio
+ * ------------------------------------------------------------- */
+main .border-t.border-white\/10:has(input[type="range"]) {
+  background: #e2e8f0 !important;
+  border-color: #cbd5e1 !important;
+}
+
+main h3,
+main .font-bold.text-neutral-200 {
+  color: #0f172a !important;
+}
+
+main span.text-neutral-400 {
+  color: #475569 !important;
+}
+
+/* Color Palette Swatches */
+main .grid-cols-8 button {
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+main .grid-cols-8 button.border-white {
+  border: 2px solid #0f172a !important;
+  box-shadow: 0 0 0 2px #22c55e !important;
+}
+
+/* Slider Stepper Buttons */
+main button:has(svg.lucide-plus),
+main button:has(svg.lucide-minus) {
+  background: #cbd5e1 !important;
+  border: 1px solid #94a3b8 !important;
+  color: #0f172a !important;
+}
+
+main button:has(svg.lucide-plus):hover,
+main button:has(svg.lucide-minus):hover {
+  background: #f1f5f9 !important;
+}
+
+/* Range Sliders */
+input[type="range"] {
+  accent-color: #22c55e;
+}
+
+/* -------------------------------------------------------------
+ * Right Column: 3D Character Viewport
+ * ------------------------------------------------------------- */
+section.bg-\[\#0d0f1b\]\/80 {
+  background: #e8ecf4 !important;
+}
+
+/* Username input */
+section input[type="text"] {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1.5px solid #cbd5e1 !important;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* 3D Viewport Action Buttons */
+section button.bg-\[\#161a2b\] {
+  background: #cbd5e1 !important;
+  border: 1px solid #94a3b8 !important;
+  color: #1e293b !important;
+}
+
+section button.bg-\[\#161a2b\]:hover {
+  background: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+/* Animation Chips */
+section .flex.flex-wrap.gap-1 button {
+  background: #cbd5e1 !important;
+  border: 1px solid #94a3b8 !important;
+  color: #334155 !important;
+}
+
+section .flex.flex-wrap.gap-1 button.bg-\[\#BEF264\] {
+  background: linear-gradient(180deg, #38d39f 0%, #22c55e 100%) !important;
+  border-color: #15803d !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 6px rgba(34, 197, 94, 0.3) !important;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #d8e2ee;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 4px;
+  border: 1px solid #cbd5e1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* MultiCraft Corner Selection Brackets */
+.corner-brackets-overlay {
+  position: absolute;
+  inset: -2px;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.corner-brackets-overlay::before,
+.corner-brackets-overlay::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: #22c55e;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
+}
+
+.corner-brackets-overlay::before {
+  top: 0;
+  left: 0;
+  border-top-width: 2.5px;
+  border-left-width: 2.5px;
+  border-style: solid;
+}
+
+.corner-brackets-overlay::after {
+  top: 0;
+  right: 0;
+  border-top-width: 2.5px;
+  border-right-width: 2.5px;
+  border-style: solid;
+}
+
+.corner-brackets-bottom {
+  position: absolute;
+  inset: -2px;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.corner-brackets-bottom::before,
+.corner-brackets-bottom::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: #22c55e;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
+}
+
+.corner-brackets-bottom::before {
+  bottom: 0;
+  left: 0;
+  border-bottom-width: 2.5px;
+  border-left-width: 2.5px;
+  border-style: solid;
+}
+
+.corner-brackets-bottom::after {
+  bottom: 0;
+  right: 0;
+  border-bottom-width: 2.5px;
+  border-right-width: 2.5px;
+  border-style: solid;
+}

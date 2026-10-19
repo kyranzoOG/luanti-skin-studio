@@ -1,0 +1,6 @@
+{
+  "name": "Luanti Skin Editor",
+  "description": "Recreation of the Luanti/Minetest edit_skin character customizer with 3D preview, real-time compositing, and palette controls.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
